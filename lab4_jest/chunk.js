@@ -1,3 +1,4 @@
+//lab4
 function chunk(array, size) {
     var chunkedArr = [];
     var index = 0;
