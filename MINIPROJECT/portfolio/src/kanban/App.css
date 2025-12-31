@@ -1,0 +1,439 @@
+/* Kanban App - Scoped Styles */
+.kanban-app * {
+  box-sizing: border-box;
+}
+
+.kanban-app {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  background: #f8f9fa;
+}
+
+.kanban-app .app-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none !important;
+}
+
+.kanban-app .app-header {
+  text-align: center;
+  padding: 15px 10px !important;
+  background: linear-gradient(135deg, #3a86ff, #8338ec);
+  color: white;
+  flex-shrink: 0;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.kanban-app .app-header h1 {
+  font-size: 1.2rem !important;
+  margin-bottom: 5px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+.kanban-app .app-header p {
+  font-size: 0.8rem !important;
+  opacity: 0.9;
+  margin: 0 !important;
+  color: white !important;
+}
+
+.kanban-app .header-actions {
+  margin-top: 10px !important;
+}
+
+.kanban-app .clear-all-btn {
+  background: linear-gradient(to right, #ff6b6b, #ff8e8e) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 6px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.2s !important;
+}
+
+.kanban-app .clear-all-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.kanban-app .task-form-container {
+  padding: 15px !important;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+.kanban-app .task-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 !important;
+}
+
+.kanban-app .task-form input {
+  flex: 1;
+  padding: 10px 15px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px;
+  font-size: 13px !important;
+  height: 40px;
+  background: white !important;
+  color: #333 !important;
+}
+
+.kanban-app .task-form input::placeholder {
+  color: #888 !important;
+}
+
+.kanban-app .task-form button {
+  padding: 0 20px !important;
+  background: #ff6b6b !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  font-size: 13px !important;
+  transition: background-color 0.2s !important;
+}
+
+.kanban-app .task-form button:hover {
+  background: #ff5252 !important;
+}
+
+.kanban-app .kanban-board {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+  padding: 10px !important;
+  margin: 0 !important;
+}
+
+.kanban-app .column {
+  flex: 1;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0 !important;
+}
+
+.kanban-app .column-header {
+  padding: 12px 15px !important;
+  background: #f8f9fa !important;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 !important;
+}
+
+.kanban-app .column-header h2 {
+  font-size: 0.9rem !important;
+  color: #333 !important;
+  margin: 0 !important;
+  font-weight: 600;
+}
+
+.kanban-app .task-count {
+  background: #3a86ff !important;
+  color: white !important;
+  padding: 2px 8px !important;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.kanban-app .tasks-container {
+  padding: 10px !important;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 200px;
+  margin: 0 !important;
+}
+
+.kanban-app .task-card {
+  background: white;
+  padding: 10px !important;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+  border-left: 3px solid #3a86ff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kanban-app .task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12) !important;
+}
+
+.kanban-app .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px !important;
+}
+
+.kanban-app .task-header p {
+  margin: 0 !important;
+  flex: 1;
+  font-weight: 500;
+  color: #333 !important;
+  font-size: 12px !important;
+  line-height: 1.3;
+}
+
+.kanban-app .delete-btn {
+  background: #ff6b6b !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50%;
+  width: 22px !important;
+  height: 22px !important;
+  font-size: 14px !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s !important;
+}
+
+.kanban-app .delete-btn:hover {
+  background: #ff5252 !important;
+}
+
+.kanban-app .task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px !important;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.kanban-app .task-id {
+  font-size: 9px !important;
+  color: #888 !important;
+  background: #f5f5f5;
+  padding: 1px 4px !important;
+  border-radius: 3px;
+  font-family: monospace !important;
+}
+
+.kanban-app .actions {
+  display: flex;
+  gap: 6px;
+}
+
+.kanban-app .move-btn {
+  padding: 4px 8px !important;
+  border: none !important;
+  border-radius: 4px;
+  font-size: 10px !important;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.2s !important;
+}
+
+.kanban-app .move-btn.left {
+  background: #6c757d !important;
+  color: white !important;
+}
+
+.kanban-app .move-btn.right {
+  background: #3a86ff !important;
+  color: white !important;
+}
+
+.kanban-app .move-btn:hover {
+  opacity: 0.9 !important;
+}
+
+.kanban-app .column-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kanban-app .delete-all-btn {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff6b6b !important;
+  border: 1px solid #ff6b6b !important;
+  border-radius: 4px;
+  padding: 2px 6px !important;
+  font-size: 10px !important;
+  cursor: pointer;
+  transition: all 0.2s !important;
+}
+
+.kanban-app .delete-all-btn:hover {
+  background: #ff6b6b !important;
+  color: white !important;
+}
+
+.kanban-app .app-footer {
+  padding: 10px !important;
+  text-align: center;
+  background: #f8f9fa !important;
+  border-top: 1px solid #e9ecef;
+  color: #666 !important;
+  font-size: 11px !important;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+.kanban-app .app-footer p {
+  margin: 0 !important;
+  color: #666 !important;
+}
+
+.kanban-app .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+}
+
+.kanban-app .empty-state p:first-child {
+  font-size: 24px !important;
+  margin-bottom: 5px !important;
+}
+
+.kanban-app .empty-state p:last-child {
+  font-size: 12px !important;
+}
+
+.kanban-app .column-summary {
+  text-align: center;
+  padding: 8px !important;
+  margin-top: 10px;
+  background: rgba(0,0,0,0.02);
+  border-radius: 6px;
+  font-size: 11px !important;
+  color: #666 !important;
+}
+
+/* Form group specific */
+.kanban-app .form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.kanban-app .form-info {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.kanban-app .form-info small {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Scrollbar styling */
+.kanban-app .tasks-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.kanban-app .tasks-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.kanban-app .tasks-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.kanban-app .tasks-container::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Responsive for small window */
+@media (max-width: 768px) {
+  .kanban-app .kanban-board {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .kanban-app .task-form {
+    flex-direction: column;
+  }
+  
+  .kanban-app .task-form button {
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .kanban-app .task-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .kanban-app .actions {
+    width: 100%;
+  }
+  
+  .kanban-app .move-btn {
+    flex: 1;
+  }
+}
+
+/* In your Kanban App.css, update the footer styles: */
+
+/* Make it very specific */
+.kanban-app .app-footer,
+.kanban-app .app-footer p,
+.kanban-app footer.app-footer,
+.kanban-app footer.app-footer p {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.kanban-app .app-footer p {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: auto !important;
+}
+
+/* Or add this specific rule */
+.kanban-app footer[class*="footer"] p {
+  text-align: center !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
